@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
-  s.platform		= :osx, "10.7"
-  s.name            = "OpenSSL-OSX"
-  s.version         = "1.0.205"
-  s.summary         = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in OS X, this CocoaPod will add the latest OpenSSL to your OS X project."
-  s.author          = "OpenSSL Project <openssl-dev@openssl.org>"
+  s.platform		= :osx, '10.7'
+  s.name            = 'OpenSSL-OSX'
+  s.version         = '1.0.205'
+  s.summary         = 'OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in OS X, this CocoaPod will add the latest OpenSSL to your OS X project.'
+  s.author          = 'OpenSSL Project <openssl-dev@openssl.org>'
 
-  s.homepage        = "https://github.com/GerTeunis/OpenSSL-OSX-Pod"
+  s.homepage        = 'https://github.com/GerTeunis/OpenSSL-OSX-Pod'
   s.license         = 'BSD-style Open Source'
-  s.source          = { :http => "https://openssl.org/source/openssl-1.0.2e.tar.gz", :sha1 => "2c5691496761cb18f98476eefa4d35c835448fb6"}
-  s.source_files    = "opensslIncludes/openssl/*.h"
-  s.header_dir      = "openssl"
-  s.license	        = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE' }
+  s.source          = { http: 'https://openssl.org/source/openssl-1.0.2e.tar.gz', sha1: '2c5691496761cb18f98476eefa4d35c835448fb6' }
+  s.source_files    = 'opensslIncludes/openssl/*.h'
+  s.header_dir      = 'openssl'
+  s.license	        = { type: 'OpenSSL (OpenSSL/SSLeay)', file: 'LICENSE' }
 
   s.prepare_command = <<-CMD
     VERSION="1.0.2e"
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
     for ARCH in ${ARCHS}
     do
-    
+
       if [ "${ARCH}" == "i386" ];
       then
           CONFIGURE_FOR="darwin-i386-cc"
@@ -83,10 +83,9 @@ Pod::Spec.new do |s|
     echo "Done."
   CMD
 
-  s.public_header_files = "opensslIncludes/openssl/*.h"
-  s.vendored_libraries  = "lib/libcrypto.a", "lib/libssl.a"
+  s.public_header_files = 'opensslIncludes/openssl/*.h'
+  s.vendored_libraries  = 'lib/libcrypto.a', 'lib/libssl.a'
 
   s.libraries             = 'crypto', 'ssl'
   s.requires_arc          = false
-
 end
